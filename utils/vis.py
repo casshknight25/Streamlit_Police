@@ -16,7 +16,7 @@ def crime_location_bar_chart(df):
     location_counts = df['location.street.name'].value_counts().reset_index()
     location_counts.columns = ['Location', 'Number of Crimes']
     fig = px.bar(location_counts, x='Location', y='Number of Crimes', title='Number of Crimes by Location')
-    # Customize axis titles and orientation
+    # Customize axis titles
     fig.update_layout(xaxis_title="Location", yaxis_title="Number of Crimes", xaxis_tickangle=-45)
     st.plotly_chart(fig, theme ='streamlit')
 
